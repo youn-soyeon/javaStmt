@@ -2,17 +2,17 @@ package ifelse;
 
 public class Kaup {
 	// 속성영역 : field
-	private String name;
+	private String name; // 인스턴스변수
 	private int kaup;
 	private double height, weight;
 	private String result;
-	
+
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
-		//main에서 파라미터 받아와야 한다.
+		// main에서 파라미터 받아와야 한다.
 		this.name = name;
 	}
 
@@ -47,6 +47,8 @@ public class Kaup {
 	}
 
 	public void setResult() {
+		setKaup();		
+		
 		String temp = "";
 		if (kaup > 30) {
 			temp = "비만";
@@ -66,4 +68,10 @@ public class Kaup {
 
 		this.result = temp;
 	}
+
+	@Override
+	public String toString() {
+		return "카우푸 지수 [이름=" + name + ", 결과=" + result + "]";
+	}
+
 }

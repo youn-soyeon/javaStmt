@@ -21,21 +21,20 @@ import java.util.Scanner;
  * 홍길동님은 비만입니다. 라고 출력하는 프로그램을 작성하시오
  */
 
+
 public class kaupMain {
 	public static void main(String[] args) {
-		String resultStr = ""; // "" 리터럴이라고 명명하겠음.
-		
 		Scanner scanner = new Scanner(System.in);
 		Kaup k = new Kaup();
 		
 		System.out.println("이름, 키, 몸무게 입력 ");
+		
 		k.setName(scanner.next());
 		k.setHeight(scanner.nextDouble());
 		k.setWeight(scanner.nextDouble());
 		
-		k.setKaup();
-		
-		System.out.println(k.getName() + "님은 " + k.getResult() + "입니다.");
+		k.setResult();
+		System.out.println(k.toString());
 	}
 
 }
