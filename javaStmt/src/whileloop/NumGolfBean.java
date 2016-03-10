@@ -7,6 +7,12 @@ public class NumGolfBean {
 	// 카운트가 작을수록 승리
 	int player, com, count;
 	boolean flag; // 컴의 숫자와 일치하는지 체크하는 값
+	
+	//생성하지 않아도 default로 생성되어있음.
+	public NumGolfBean() {
+		// TODO Auto-generated constructor stub
+	}
+	
 
 	public int getPlayer() {
 		return player;
