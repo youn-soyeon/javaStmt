@@ -18,9 +18,9 @@ public class NumGolfMain {
 		numGolfBean.setCom();
 
 		while (numGolfBean.isFlag() == false) {
+			numGolfBean.setCount();
 			System.out.println("숫자를 입력하세요.");
 			numGolfBean.setPlayer(scanner.nextInt());
-			numGolfBean.setCount();
 		}
 
 	}

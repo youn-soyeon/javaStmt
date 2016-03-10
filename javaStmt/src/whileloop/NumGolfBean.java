@@ -33,7 +33,7 @@ public class NumGolfBean {
 	}
 
 	public void setCount() {
-		this.count++;
+		++this.count;
 	}
 
 	public boolean isFlag() {
@@ -46,17 +46,17 @@ public class NumGolfBean {
 		} else {
 			this.flag = false;
 		}
-		
+
 		System.out.println(toString());
 	}
 
 	@Override
 	public String toString() {
 		if (getCom() == getPlayer()) {
-			return "값이 일치합니다. \n"
-					+"결과 [플레이어 값=" + player + ", 컴퓨터 값=" + com + ", 시도한 횟수=" + count + ", 일치여부=" + flag + "]";
+			return "값이 일치합니다. \n" + "결과 [플레이어 값=" + player + ", 컴퓨터 값=" + com + ", 시도한 횟수=" + count + ", 일치여부=" + flag
+					+ "]";
 		} else {
-			return "일치하지 않습니다.";
+			return "일치하지 않습니다. - "+count+"번 시도함";
 		}
 	}
 
