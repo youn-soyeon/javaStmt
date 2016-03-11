@@ -15,7 +15,7 @@ public class AccountBean {
 	public AccountBean() {} // 지역변수 용도로 사용하기 위해 오버로딩
 
 	public AccountBean(String name, int password) {
-		this.accountNo = (int) ((Math.random() * 1000000) + 1);
+		this.accountNo = (int) ((Math.random() * 10) + 1);
 		this.name = name;
 		this.password = password;
 		this.money = 0;

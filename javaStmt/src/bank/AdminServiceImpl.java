@@ -25,7 +25,7 @@ public class AdminServiceImpl implements AdminService {
 		accountList[count] = bean; // 배열에 새로 생성된 bean 객체를 저장하여 전체계좌를 보관한다.
 		
 		count++; // 계좌를 개설할 때 마다 카운트를 1씩 증가시킨다.
-		return accountList[count].toString();
+		return bean.toString();
 	}
 
 	@Override
@@ -36,6 +36,7 @@ public class AdminServiceImpl implements AdminService {
 		for (int i = 0; i < count; i++) {
 			if (accountList[i].getAccountNo() == accountNo) {
 				temp = accountList[i];
+				System.out.println("라라라라라랄"+temp.toString());
 			}
 		}
 		return temp;
