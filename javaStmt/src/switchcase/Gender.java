@@ -11,29 +11,27 @@ public class Gender {
 	}
 
 	public void setGender() {
+		
 		flag = ssn.charAt(7);
-		switch(flag) {
-		case 1:
-		case 3: gender = "남자"; return;
 		
-		case 2:
-		case 4: gender = "여자"; return;
-		
-		case 5:
-		case 6: gender = "외국인"; return;
-		
+		switch (flag) {
+		case '1': case '3': gender = "남자"; break;
+		case '2': case '4': gender = "여자"; break;
+		case '5': case '6': gender = "외국인"; break;
+
 		default:
-			System.out.println("잘못된 주민번호 입니다.");
+//			System.out.println("잘못된 주민번호 입니다.");
 			return;
 		}
 	}
 
 	@Override
 	public String toString() {
-		return name + "은 " + gender + "입니다.";
+		if (gender.equals("")) {
+			 return "잘못된 주민번호 입니다.";
+		} else {
+			return name + "은 " + gender + "입니다.";
+		}
 	}
 
-	
-	
-	
 }
