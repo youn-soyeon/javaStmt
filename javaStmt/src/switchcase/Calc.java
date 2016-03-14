@@ -18,10 +18,10 @@ public class Calc {
 		// + - * / 단 나눗셈은 몫과 나머지로 출력
 		int b = scanner.nextInt(), result = 0, mok = 0, nmg = 0;
 		switch (opcode) {
-		case "+": result = a+b; break;
-		case "-": result = a-b;break;
-		case "*": result = a*b;break;
-		case "/": result = a/b;break;
+		case "+": result = a + b; break;
+		case "-": result = a - b; break;
+		case "*": result = a * b; break;
+		case "/": result = a / b; break;
 		default:
 			System.out.println("연산기호를 잘못 입력");
 			return;
