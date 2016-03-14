@@ -16,11 +16,26 @@ public class NumGolfMain {
 
 		System.out.println("컴퓨터 랜덤 수 발생");
 		numGolfBean.setCom();
+		System.out.println(numGolfBean.getCom());
 
-		while (numGolfBean.isFlag() == false) {
-			numGolfBean.setCount();
-			System.out.println("숫자를 입력하세요.");
-			numGolfBean.setPlayer(scanner.nextInt());
+		while (true) {
+			System.out.println("[메뉴] 1.숫자 맞추기 2.종료 > ");
+			int key = scanner.nextInt();
+			switch (key) {
+			case 1:
+				while (numGolfBean.isFlag() == false) {
+					System.out.println("숫자를 입력하세요.");
+					numGolfBean.setPlayer(scanner.nextInt());
+					System.out.println(numGolfBean.toString());
+				}
+				return;
+			case 2: System.out.println("종료합니다.");
+				return;
+			default:
+				System.out.println("잘못된 입력 입니다.");
+				break;
+			}
+
 		}
 
 	}

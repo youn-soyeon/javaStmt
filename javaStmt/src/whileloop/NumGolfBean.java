@@ -9,9 +9,7 @@ public class NumGolfBean {
 	boolean flag; // 컴의 숫자와 일치하는지 체크하는 값
 	
 	//생성하지 않아도 default로 생성되어있음.
-	public NumGolfBean() {
-		// TODO Auto-generated constructor stub
-	}
+	public NumGolfBean() {}
 	
 
 	public int getPlayer() {
@@ -20,7 +18,7 @@ public class NumGolfBean {
 
 	public void setPlayer(int player) {
 		this.player = player;
-
+		setCount();
 		setFlag();
 		isFlag();
 	}
@@ -47,23 +45,28 @@ public class NumGolfBean {
 	}
 
 	public void setFlag() {
-		if (getCom() == getPlayer()) {
-			this.flag = true;
-		} else {
-			this.flag = false;
-		}
-
-		System.out.println(toString());
+		
+		this.flag = (getCom() == getPlayer()) ?  true : false ;
+		
+//		if (getCom() == getPlayer()) {
+//			this.flag = true;
+//		} else {
+//			this.flag = false;
+//		}
 	}
+	
 
 	@Override
 	public String toString() {
-		if (getCom() == getPlayer()) {
-			return "값이 일치합니다. \n" + "결과 [플레이어 값=" + player + ", 컴퓨터 값=" + com + ", 시도한 횟수=" + count + ", 일치여부=" + flag
-					+ "]";
-		} else {
-			return "일치하지 않습니다. - "+count+"번 시도함";
-		}
+		return (getCom() == getPlayer()) ?  "값이 일치합니다. \n" + "결과 [플레이어 값=" + player + ", 컴퓨터 값=" + com + ", 시도한 횟수=" + count + ", 일치여부=" + flag
+				+ "]" : "일치하지 않습니다. - "+count+"번 시도함" ;
+		
+//		if (getCom() == getPlayer()) {
+//			return "값이 일치합니다. \n" + "결과 [플레이어 값=" + player + ", 컴퓨터 값=" + com + ", 시도한 횟수=" + count + ", 일치여부=" + flag
+//					+ "]";
+//		} else {
+//			return "일치하지 않습니다. - "+count+"번 시도함";
+//		}
 	}
 
 }
