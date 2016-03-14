@@ -21,11 +21,18 @@ public class FirstGrade {
 		String cName = scanner.next();
 		int cScore = scanner.nextInt();
 		
-		String firstName = "";
-		int firstScore = 0;
+		String firstName = aName;
+		int firstScore = aScore;
 		
-		if
+		if(bScore > firstScore) {
+			firstScore = bScore;
+			firstName = bName;
+			if(cScore > firstScore) {
+				firstScore = cScore;
+				firstName = cName;
+			}
+		} 
 		
-		System.out.println("1등은 홍길동, 90점 입니다");
+		System.out.println("1등은 " + firstName +", " + firstScore + "점 입니다");
 	}
 }

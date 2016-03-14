@@ -12,10 +12,10 @@ import java.util.Scanner;
 public class Gender {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("이름을 입력하세요. > ");
-		System.out.println("주민번호를 입력하세요. > ");
+		System.out.println("이름과 주민번호를 입력하세요. > ");
 		String name = scanner.next(), ssn = scanner.next();
 		char flag = ssn.charAt(7);
+		String gender = "";
 		/**
 		 * 800101-1234567 일 때
 		 * charAt(인덱스값)은 해당 인덱스에 해당하는 한 글자를 반환
@@ -26,14 +26,14 @@ public class Gender {
 		 * 다른 값이면 잘못된 주민 번호 입니다.
 		 * */
 		
-		if(flag == 1 || flag == 3) {
-			
-		} else if (flag == 2 || flag == 4) {
-			
-		} else if (flag == 5 || flag == 6) {
-			
+		if(flag == '1' || flag == '3') {
+			gender = "남자";
+		} else if (flag == '2' || flag == '4') {
+			gender = "여자";
+		} else if (flag == '5' || flag == '6') {
+			gender = "외국인";
 		}
 		
-		System.out.println("홍길동은 남자 입니다.");
+		System.out.println(name + "은 " + gender + " 입니다.");
 	}
 }

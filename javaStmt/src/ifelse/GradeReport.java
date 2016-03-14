@@ -29,26 +29,27 @@ public class GradeReport {
 		System.out.println("이름, 과목명, 점수를 입력하세요 > ");
 		String name = scanner.next(), subject = scanner.next();
 		int score = scanner.nextInt();
+		char grade = ' ';
 		
 		if (score >= 90) {
-			
+			grade = 'A';
 		} else if(score >= 80){
-			
+			grade = 'B';
 		} else if(score >= 70) {
-			
+			grade = 'C';
 		} else if(score >= 60) {
-			
+			grade = 'D';
 		} else if(score >= 50) {
-			
+			grade = 'E';
 		} else {
-
+			grade = 'F';
 		}
 
 		System.out.println("[결과]");
 		System.out.println("******************************");
 		System.out.println("이름	과목	점수	학점");
 		System.out.println("------------------------------");
-		System.out.println("홍길동	영어	89점	B	");
+		System.out.println(name + "	" + subject + "	" + score + "점	" + grade + "	");
 		System.out.println("******************************");
 	}
 }

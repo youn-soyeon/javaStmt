@@ -13,15 +13,20 @@ public class TimeCalc {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("초를 입력해 주세요. > ");
-		int inputSec = scanner.nextInt();
+		int second = scanner.nextInt();
 		
-		int hour, minute, second;
+		int hour = 0, minute = 0;
 		
-		if(inputSec >= 60) {
-			
+		if(second >= 60) {
+			minute = second / 60;
+			second = second % 60;
+			if(minute >= 60){
+				hour = minute / 60;
+				minute = minute % 60;
+			}
 		}
 		
 		
-		System.out.println("7시간 47분 13초");
+		System.out.println(hour + "시간 " + minute + "분 " + second + "초");
 	}
 }
