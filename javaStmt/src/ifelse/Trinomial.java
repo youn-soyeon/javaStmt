@@ -1,4 +1,4 @@
-package whileloop;
+package ifelse;
 
 public class Trinomial {
 	private String name, result;
@@ -51,6 +51,6 @@ public class Trinomial {
 
 	@Override
 	public String toString() {
-		return "[결과] " + name + "님의 평균점수는 " + avg + "으로 " + result + "입니다.";
+		return "[결과] " + name + "님의 평균점수는 " + avg + "점으로 " + result + "입니다.";
 	}
 }

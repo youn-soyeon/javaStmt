@@ -1,36 +1,42 @@
 package forloop;
 
-import java.util.Scanner;
+public class FactorOf5 {
+	private int endNum, count, sum;
 
-/**
- * @file : FactorOf5.java
- * @author sssoyeon92@naver.com
- * @date 2016. 3. 11.
- * @story 5의 배수의 개수와 합
- */
+	public int getEndNum() {
+		return endNum;
+	}
 
-public class FactorOf5 { 
-	/**
-	 * [결과]
-	 * 1에서 100(입력받은 수)까지 정수까지
-	 * 5 배수의 개수는 20이고
-	 * 5 배수의 합은 1050 이다
-	 * */
-	
-	public static void main(String[] args) {
-		int endNum = 0, count = 0, sum = 0;
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.print("리미트값 입력 > ");
-		endNum = scanner.nextInt();
-		
+	public void setEndNum(int endNum) {
+		this.endNum = endNum;
+		setSum();
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount() {
+		++this.count;
+	}
+
+	public int getSum() {
+		return sum;
+	}
+
+	public void setSum() {
 		for (int i = 1; i <= endNum; i++) {
 			if( i % 5 == 0){
-				++count;
+				setCount();
 				sum += i;
 			}
 		}
-		
-		System.out.println("1에서"+ endNum +"까지 정수까지 5 배수의 개수는 " + count + "이고 5 배수의 합은 " + sum + " 이다");
+		System.out.println(toString());
 	}
+	
+	@Override
+	public String toString() {
+		return "결과 = [1부터 " + endNum + "까지의 5배수의 개수는 " + count + "이고 그 합은 " + sum + "입니다.]";
+	}
+	
 }

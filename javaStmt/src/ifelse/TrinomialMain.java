@@ -1,4 +1,4 @@
-package whileloop;
+package ifelse;
 
 import java.util.Scanner;
 
