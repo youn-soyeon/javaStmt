@@ -31,7 +31,6 @@ public class FactorOf5 {
 				sum += i;
 			}
 		}
-		System.out.println(toString());
 	}
 	
 	@Override

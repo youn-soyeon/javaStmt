@@ -22,5 +22,6 @@ public class FactorOf5Main {
 		FactorOf5 f = new FactorOf5();
 		System.out.print("리미트값 입력 > ");
 		f.setEndNum(scanner.nextInt());
+		System.out.println(f.toString());
 	}
 }
