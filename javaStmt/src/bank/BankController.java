@@ -26,16 +26,22 @@ public class BankController {
 				break;
 			case 3: 
 				System.out.println("출금하실 계좌번호를 입력하세요 > ");
-				int account = s.nextInt();
+				int tempAccount1 = s.nextInt();
 				System.out.println("출금하실 금액을 입력하세요 > ");
-				int money = s.nextInt();
+				int tempMoney1 = s.nextInt();
 				System.out.println("출금하실 계좌의 비밀번호를 입력하세요 > ");
-				int password = s.nextInt();
+				int tempPass1 = s.nextInt();
 				
-				bank.withdraw(account, money, password);
+				System.out.println(bank.withdraw(tempAccount1, tempMoney1, tempPass1));
 				break;
 			case 4:
 				System.out.println("잔액을 조회하실 계좌번호를 입력하세요 > ");
+				int tempAccount2 = s.nextInt();
+				System.out.println("조회하실 계좌의 비밀번호를 입력하세요 > ");
+				int tempPass2 = s.nextInt();
+				
+				System.out.println(bank.findMoney(tempAccount2, tempPass2));
+				
 				break;
 			case 0: System.out.println("시스템을 종료합니다."); return;
 

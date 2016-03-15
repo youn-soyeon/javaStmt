@@ -42,7 +42,7 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public int countAll() {
 		// 전체 계좌수 조회
-		return 0;
+		return accountList.size();
 	}
 
 	@Override

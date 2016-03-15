@@ -19,5 +19,5 @@ public interface BankService {
 	/**
 	 * 잔액조회
 	 */
-	public String findMoney();
+	public String findMoney(int account, int password);
 }

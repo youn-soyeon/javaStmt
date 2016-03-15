@@ -24,7 +24,7 @@ public class AdminController {
 			case 2: break;
 			case 3: break;
 			case 4: break;
-			case 5: break;
+			case 5: System.out.println("전체 계좌 수 : " + admin.countAll()); break;
 			case 6: break;
 			case 0: System.out.println("시스템을 종료합니다."); return;
 

@@ -4,7 +4,7 @@ import java.util.Vector;
 
 public class BankSeviceImpl implements BankService {
 	Vector<AccountBean> accountList;
-	
+
 	public BankSeviceImpl() {
 		accountList = new Vector<AccountBean>();
 	}
@@ -19,15 +19,17 @@ public class BankSeviceImpl implements BankService {
 	@Override
 	public String deposit(int account, int money) {
 		// 입금
-		int index = 0;
+		String str = "";
 		for (int i = 0; i < accountList.size(); i++) {
-			if(accountList.elementAt(i).getAccountNo() == account) {
+			if (accountList.elementAt(i).getAccountNo() == account) {
 				int tempMoney = accountList.elementAt(i).getMoney() + money;
 				accountList.elementAt(i).setMoney(tempMoney);
-				index = i;
-			}		
+				str = "[입금완료] 계좌번호 : " + account + " 잔액 : " + accountList.elementAt(i).getMoney() + "원";
+			} else {
+				str = "일치하는 계좌가 없습니다.";
+			}
 		}
-		return "[입금완료] 계좌번호 : "+ account + " 금액 : " + accountList.elementAt(index).getMoney() + "원";
+		return str;
 	}
 
 	@Override
@@ -35,21 +37,30 @@ public class BankSeviceImpl implements BankService {
 		// 출금
 		int index = 0;
 		for (int i = 0; i < accountList.size(); i++) {
-			if(accountList.elementAt(i).getAccountNo() == account) {
-				int tempMoney = accountList.elementAt(i).getMoney() + money;
-				accountList.elementAt(i).setMoney(tempMoney);
-				index = i;
+
+			if (accountList.elementAt(i).getAccountNo() == account) {
+				if (accountList.elementAt(i).getPassword() == password) {
+					int tempMoney = accountList.elementAt(i).getMoney() - money;
+					accountList.elementAt(i).setMoney(tempMoney);
+					index = i;
+				}
 			}
 		}
-		return "정상적으로 출금처리 되었습니다.";
+		return "[출금완료] 계좌번호 : " + account + " 잔액 : " + accountList.elementAt(index).getMoney() + "원";
 	}
 
 	@Override
-	public String findMoney() {
-		
+	public String findMoney(int account, int password) {
 		// 계좌 조회
-		return "";
-//		return account.getName() + "님의 " + account.getAccountNo() + "잔액 : " + account.getMoney();
+		String result = "계좌 조회 실패";
+		for (int i = 0; i < accountList.size(); i++) {
+			if (accountList.elementAt(i).getAccountNo() == account) {
+				if (accountList.elementAt(i).getPassword() == password) {
+					result = "[출금완료] 계좌번호 : " + account + " 잔액 : " + accountList.elementAt(i).getMoney() + "원";
+				}
+			}
+		}
+		return result;
 	}
 
 }
