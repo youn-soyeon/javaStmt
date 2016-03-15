@@ -14,9 +14,13 @@ public interface GradeService {
 	// R 성적표 리스트 출력
 	public void getList();
 	// R 성적표 조회(학번)
-	public void getGradebyHak();
+	public void getGradeByHak();
 	// R 성적표 조회(이름)
 	public void getGrades();
+	// R 카운트 조회(개수)
+	public void getCount();
+	// R 이름조회시 카운트 조회
+	public void getCountByName();
 	// U 성적표 수정
 	public void update();
 	// D 성적표 삭제
