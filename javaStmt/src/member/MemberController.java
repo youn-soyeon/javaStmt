@@ -24,7 +24,7 @@ public class MemberController {
 				break;
 			case 4: 
 				System.out.println("[내정보수정] 아이디, 비밀번호, 이름, 주소, 생년월일를 입력하세요 > ");
-				System.out.println(service.update(s.next(), s.next(), s.next(), s.next(), s.nextInt()));
+				System.out.println(service.update(new MemberBean(s.next(), s.next(), s.next(), s.next(), s.nextInt())));
 				break;
 			case 5: 
 				System.out.println("[회원탈퇴] 탈퇴하실 아이디를 입력하세요 > ");

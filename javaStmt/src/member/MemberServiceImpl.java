@@ -56,20 +56,16 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public String update(String id, String password, String name, String addr, int birth) {
+	public String update(MemberBean member) {
 		// 회원 정보 수정
 		String updateResult = "[실패] 정보 수정에 실패하였습니다.";
 		Iterator<String> it = map.keySet().iterator();
 		while (it.hasNext()) {
-			if (it.next().equals(id)) {
-				if (map.get(id).getPassword().equals(password)) {
-					map.get(id).setName(name);
-					map.get(id).setAddr(addr);
-					map.get(id).setBirth(birth);
-					updateResult = "[성공] 회원 정보가 수정되었습니다.";
-				} else {
-					updateResult = "[실패] 비밀번호가 틀렸습니다.";
-				}
+			if (it.next().equals(member.getId())) {
+				map.replace(member.getId(), member);
+				updateResult = "[성공] 회원 정보가 수정되었습니다.";
+			} else {
+				updateResult = "[실패] 비밀번호가 틀렸습니다.";
 			}
 		}
 		return updateResult;
@@ -92,5 +88,4 @@ public class MemberServiceImpl implements MemberService {
 		}
 		return removeResult;
 	}
-
 }

@@ -16,7 +16,7 @@ public interface MemberService {
 	/**
 	 * 회원정보수정
 	 * */
-	public String update(String id, String password, String name, String addr, int birth);
+	public String update(MemberBean member);
 	/**
 	 * 회원탈퇴
 	 * */
