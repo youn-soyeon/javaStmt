@@ -7,7 +7,8 @@ public class BankMain {
 		// 지역변수 영역
 		Scanner scanner = new Scanner(System.in);
 		BankSeviceImpl bankService = new BankSeviceImpl();
-		AdminServiceImpl admin = new AdminServiceImpl(100);
+//		AdminServiceImpl2 admin = new AdminServiceImpl2(100);
+		AdminServiceImpl admin = new AdminServiceImpl();
 
 		Loop: while (true) {
 			System.out.print("Mode 선택 : 1관리자 2고객 3종료 > ");
@@ -19,7 +20,7 @@ public class BankMain {
 				Loop2: switch (scanner.nextInt()) {
 				case 1:
 					System.out.println("이름과 비밀번호를 입력하세요 > ");
-					System.out.println(admin.openAccount(scanner.next(), scanner.nextInt()));
+//					System.out.println(admin.openAccount(new AccountBean(scanner.next(), scanner.nextInt()));
 					break;
 
 				case 2:
@@ -43,22 +44,22 @@ public class BankMain {
 
 				case 1:
 					System.out.println("이름과 비밀번호를 입력하세요 > ");
-					System.out.println(bankService.openAccount(scanner.nextLine(), scanner.nextInt()));
+//					System.out.println(bankService.openAccount(scanner.nextLine(), scanner.nextInt()));
 					break;
 
 				case 2:
 					System.out.println("입금할 금액 : ");
-					System.out.println(bankService.deposit(scanner.nextInt()));
+//					System.out.println(bankService.deposit(scanner.nextInt()));
 					break;
 
 				case 3:
 					System.out.println("출금할 금액 : ");
-					System.out.println(bankService.withdraw(scanner.nextInt()));
+//					System.out.println(bankService.withdraw(scanner.nextInt()));
 					break;
 
 				case 4:
 					System.out.println("계좌 조회");
-					System.out.println(bankService.findMoney());
+//					System.out.println(bankService.findMoney());
 					break;
 				}
 				continue Loop;

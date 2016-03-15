@@ -11,7 +11,10 @@ public class GradeController {
 			
 			switch (scanner.nextInt()) {
 			case 1: 
-				service.input();
+				System.out.println("*** 1.등록 ***");
+				System.out.println("학번, 이름, JAVA, SQL, JSP, 스프링 점수 입력 > ");
+				service.input(new GradeBean(scanner.nextInt(), scanner.next(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt())); // Bean > DAO > DB전달
+				System.out.println("등록을 완료하였습니다.");
 				break;
 			case 2: 
 				service.update();
@@ -20,7 +23,8 @@ public class GradeController {
 				service.delete();
 				break;
 			case 4: 
-				service.getList();
+				System.out.println("*** 4.조회(전체) ***");
+				System.out.println(service.getList());
 				break;
 			case 5: 
 				service.getGrades();

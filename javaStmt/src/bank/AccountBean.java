@@ -12,10 +12,11 @@ public class AccountBean {
 	 * 합시다) 계좌 주인의 이름은 새겨지며 비번도 설정합니다 다만, 잔액은 통장이 만들어진 이후에 입금이 되겠지요.
 	 */
 
-	public AccountBean() {} // 지역변수 용도로 사용하기 위해 오버로딩
+	// 생성자 오버로딩 - 지역변수 용도로 사용하기 위함
+	public AccountBean() {}
 
 	public AccountBean(String name, int password) {
-		this.accountNo = (int) ((Math.random() * 10) + 1);
+		this.accountNo = (int) ((Math.random() * 1000000) + 1);
 		this.name = name;
 		this.password = password;
 		this.money = 0;
@@ -39,6 +40,10 @@ public class AccountBean {
 
 	public void setMoney(int money) {
 		this.money = money;
+	}
+	
+	public void generateAccount(){
+		
 	}
 
 	@Override

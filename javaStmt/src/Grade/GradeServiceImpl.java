@@ -1,17 +1,26 @@
 package Grade;
 
-public class GradeServiceImpl implements GradeService{
+import java.util.Vector;
 
+public class GradeServiceImpl implements GradeService{
+	// 멤버 필드(속성 집합)
+	Vector<GradeBean> gradeList;
+	
+	public GradeServiceImpl() {
+		gradeList = new Vector<GradeBean>(); // 초기화
+	}
+	
+	// 멤버 메소드 area(메소드 집)
 	@Override
-	public void input() {
+	public void input(GradeBean bean) {
 		// C 성적표 등록
-		
+		gradeList.add(bean);
 	}
 
 	@Override
-	public void getList() {
+	public Vector<GradeBean> getList() {
 		// R 성적표 리스트 출력
-		
+		return gradeList;
 	}
 
 	@Override
