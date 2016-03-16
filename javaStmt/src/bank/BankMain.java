@@ -6,7 +6,7 @@ public class BankMain {
 	public static void main(String[] args) {
 		// 지역변수 영역
 		Scanner scanner = new Scanner(System.in);
-		BankSeviceImpl bankService = new BankSeviceImpl();
+		BankServiceImpl bankService = new BankServiceImpl();
 //		AdminServiceImpl2 admin = new AdminServiceImpl2(100);
 		AdminServiceImpl admin = new AdminServiceImpl();
 

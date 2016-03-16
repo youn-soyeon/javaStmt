@@ -2,10 +2,10 @@ package bank;
 
 import java.util.Vector;
 
-public class BankSeviceImpl implements BankService {
+public class BankServiceImpl implements BankService {
 	Vector<AccountBean> accountList;
 
-	public BankSeviceImpl() {
+	public BankServiceImpl() {
 		accountList = new Vector<AccountBean>();
 	}
 

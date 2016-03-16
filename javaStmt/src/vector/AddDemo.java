@@ -1,5 +1,6 @@
 package vector;
 
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Vector;
 
 public class AddDemo {
 	public static void main(String[] args) {
-		Vector<String> vc = new Vector<String>();
+		List<String> vc = new Vector<String>();
 		String a = "a" , b = "b", c = "c", d = "d";
 		vc.add(a);
 		vc.add(b);

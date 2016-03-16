@@ -15,6 +15,11 @@ public class PhoneMain {
 
 	public void useAndroid(Scanner s) {
 		Phone android = new AndroidPhone();
+		// 객체 생성하는 자바 방법은 총 3가지가 있음
+		// 1. 생성자 -> 거의 사용되지 않습니다. 스프링 가면 전멸
+		// 2. Deep Copy => 부모타입으로 정의하면서 추가되는 메소드를 제약하는 문법
+		// 3. Shallow Copy => MemberBean m = instansce.getMember();
+		
 		android.setCompany("안드로이드");
 		System.out.println(android.getCompany() + "를 사용");
 		System.out.println("휴대폰으로 통화할 사람? ");
@@ -23,18 +28,18 @@ public class PhoneMain {
 	}
 
 	public void useIPhone(Scanner s) {
-		IPhone iPhone = new IPhone();
+		Phone iPhone = new IPhone();
 		iPhone.setCompany("애플");
 		System.out.println(iPhone.getCompany() + "를 사용");
 		System.out.println("휴대폰으로 통화할 사람? ");
-		iPhone.setData(s.next(), s.next());
-		System.out.println(iPhone.getData());
+		((AndroidPhone) iPhone).setData(s.next(), s.next());
+		System.out.println(((AndroidPhone) iPhone).getData());
 	}
 
 	public void useNokia(Scanner s) {
 		// 다형성
 		// 부모의 타입으로 자식의 생성자를 통해 인스턴스를 생성해야 한다.
-		Phone nokia = new CellPhone();
+		Phone nokia = new CellPhone(); // Deep Copy 방식
 
 		nokia.setCompany("노키아");
 		System.out.println(nokia.getCompany() + "를 사용합니다.");

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class GradeController {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		GradeServiceImpl service = new GradeServiceImpl();
+		GradeService service = new GradeServiceImpl();
 		GradeBean temp = new GradeBean();
 		String tempStr = "";
 		while (true) {
