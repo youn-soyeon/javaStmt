@@ -14,7 +14,7 @@ public class AdminController {
 		AdminServiceImpl admin = new AdminServiceImpl();
 		Scanner s = new Scanner(System.in);
 		while (true) {
-			System.out.println("[메뉴] 1.계좌개설 2.목록 3.조회(계좌번호) 4.조회(이름) 5.계좌 수 6.계좌 해지 0.종료");
+			System.out.println("[메뉴] 1.계좌개설 2.목록 3.조회(계좌번호) 4.조회(이름) 5.계좌 수(전체) 6.계좌 해지 7.계좌 수(이름) 0.종료");
 			
 			switch (s.nextInt()) {
 			case 1: 
